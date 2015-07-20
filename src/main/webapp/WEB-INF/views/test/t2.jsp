@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	我是t1...
+	我是t2...
 </body>
 </html>

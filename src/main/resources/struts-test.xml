@@ -6,9 +6,8 @@
 <struts>
     
     <package name="struts-test" namespace="/test" extends="struts-default">
-        <action name="t1" class="com.lxp.web.action.TestAction">
-        <!-- struts-default.xml中找type -->
-            <result name="success">/WEB-INF/views/test/t1.jsp</result>
+        <action name="test_*" class="com.lxp.web.action.TestAction">
+       		<result>/WEB-INF/views/test/{1}.jsp</result>
         </action>
     </package>
 

@@ -4,8 +4,9 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <constant name="struts.action.extension" value="action,,do,go"></constant>
+	<!-- 动态方法调用的配置，默认struts2.x已经被禁掉了，官方不建议使用(即false) -->
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.action.extension" value="action,,do,go"></constant>
     <constant name="struts.devMode" value="true" />
     <include file="struts-*"></include>
 	

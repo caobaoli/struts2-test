@@ -3,11 +3,6 @@
  */
 package com.lxp.web.action;
 
-import java.util.Date;
-
-import org.apache.struts2.dispatcher.SessionMap;
-
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -21,21 +16,12 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 @SuppressWarnings("serial")
 public class TestAction extends ActionSupport {
-	private String msg;
-
-	public String getMsg() {
-		return msg;
+	
+	public String t1() {
+		return SUCCESS;
 	}
 	
-	
-	public String execute() {
-		//获取session
-		SessionMap<String, Object> session = (SessionMap<String, Object>) ActionContext.getContext().getSession();
-		session.put("user", "admin");
-		//session失效
-//		session.invalidate();
-		msg="现在时刻: "+new Date();
-		System.out.println("msg: "+msg);
-		return "success";
+	public String t2() {
+		return SUCCESS;
 	}
 }
