@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC
-    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
-    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
     
-    <package name="default" namespace="/" extends="struts-default">
-        <action name="hello">
-            <result>WEB-INF/views/hello.jsp</result>
-        </action>
-        
-        <action name="msg" class="com.lxp.web.action.MessageAction">
+    <package name="struts-test" namespace="/test" extends="struts-default">
+        <action name="t1" class="com.lxp.web.action.TestAction">
         <!-- struts-default.xml中找type -->
-            <result name="msg">WEB-INF/views/msg.jsp</result>
+            <result name="success">/WEB-INF/views/test/t1.jsp</result>
         </action>
     </package>
 

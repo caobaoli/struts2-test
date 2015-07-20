@@ -4,7 +4,6 @@
 package com.lxp.web.action;
 
 import java.util.Date;
-import java.util.Map;
 
 import org.apache.struts2.dispatcher.SessionMap;
 
@@ -13,7 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * @Package com.lxp.web.action
- * @Class com.lxp.web.action.MessageAction
+ * @Class com.lxp.web.action.TestAction
  * @Description: TODO
  * @Author LiXiaoPeng
  * @Date 2015年7月20日 上午9:42:56
@@ -21,7 +20,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * Copyright  Corporation 2015
  */
 @SuppressWarnings("serial")
-public class MessageAction extends ActionSupport {
+public class TestAction extends ActionSupport {
 	private String msg;
 
 	public String getMsg() {
@@ -34,8 +33,9 @@ public class MessageAction extends ActionSupport {
 		SessionMap<String, Object> session = (SessionMap<String, Object>) ActionContext.getContext().getSession();
 		session.put("user", "admin");
 		//session失效
-		session.invalidate();
-		msg="现在时刻"+new Date();
-		return "msg";
+//		session.invalidate();
+		msg="现在时刻: "+new Date();
+		System.out.println("msg: "+msg);
+		return "success";
 	}
 }
