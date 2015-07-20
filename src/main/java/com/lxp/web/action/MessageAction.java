@@ -4,7 +4,11 @@
 package com.lxp.web.action;
 
 import java.util.Date;
+import java.util.Map;
 
+import org.apache.struts2.dispatcher.SessionMap;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -24,7 +28,13 @@ public class MessageAction extends ActionSupport {
 		return msg;
 	}
 	
+	
 	public String execute() {
+		//获取session
+		SessionMap<String, Object> session = (SessionMap<String, Object>) ActionContext.getContext().getSession();
+		session.put("user", "admin");
+		//session失效
+		session.invalidate();
 		msg="现在时刻"+new Date();
 		return "msg";
 	}

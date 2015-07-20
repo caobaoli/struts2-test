@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${msg}
+	${msg}, ${sessionScope.user}
 </body>
 </html>
