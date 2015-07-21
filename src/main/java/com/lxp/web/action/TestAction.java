@@ -3,6 +3,7 @@
  */
 package com.lxp.web.action;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -25,6 +26,8 @@ public class TestAction extends ActionSupport {
 	
 	public String t1() {
 		users = new String[]{"zhangsan", "lisi", "zhaoba", "wangwu"};
+		
+		ActionContext.getContext().getSession().put("cur_user", "张三");
 		return SUCCESS;
 	}
 }

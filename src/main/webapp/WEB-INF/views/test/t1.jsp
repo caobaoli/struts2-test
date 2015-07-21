@@ -47,5 +47,20 @@
 	<s:iterator value="users">
 		<div><s:property/></div>
 	</s:iterator>
+	
+	<hr />
+	el：${sessionScope.cur_user}
+	OGNL：<s:property value="#session.cur_user"/>
+	<hr />
+	<s:set var="var1" value="{'zhangsan', 'lisi', 'wangba'}"></s:set>
+	<s:iterator value="#var1">
+		<s:property/>
+	</s:iterator>
+	
+	<hr/>
+	<s:set value="#{'id':'01', 'name':'zhangsan', 'age':'20'}" var="var2"></s:set>
+	<s:debug></s:debug>
+	
+	<s:property value="users"/>
 </body>
 </html>
