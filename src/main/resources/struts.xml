@@ -4,16 +4,25 @@
     "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+	<!-- 规定uri的输入的后缀名 -->
+    <constant name="struts.action.extension" value="action,,do,go"></constant>
+
 	<!-- 动态方法调用的配置，默认struts2.x已经被禁掉了，官方不建议使用(即false) -->
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
-    <constant name="struts.action.extension" value="action,,do,go"></constant>
+    
+    <!-- 设置为ture即打开开发者模式 -->
     <constant name="struts.devMode" value="true" />
+    
+    <!-- 更改默认的主题Theme -->
+    <constant name="struts.ui.theme" value="simple"></constant>
+    
+    <!-- 多人开发时自己可以配置自己的struts.xml,下面的代码及引入其他人的文件 -->
     <include file="struts-*"></include>
 	
 	<!-- 默认的namespace -->
 	<package name="default" namespace="" extends="struts-default">
 		<!-- 默认的action -->
-		<default-action-ref name="default-action"></default-action-ref>
+		<!--<default-action-ref name="default-action"></default-action-ref>  -->
 		<action name="default-action">
 			<result type="redirect">/index.jsp</result>
 		</action>

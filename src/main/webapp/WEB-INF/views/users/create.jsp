@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,19 +10,17 @@
 <body>
 	<h1>创建表单</h1>
 	<div>
-		<div>
-			<form action="users/user_save" method="post">
-				<div>
-					用户名：<input name="user.account" value="${user.account}" type="text" />
-				</div>
-				<div>
-					email：<input name="user.email" value="${user.email}" type="text" />
-				</div>
-				<div>
-					<input value="提交" type="submit" />
-				</div>
-			</form>
-		</div>
+		<s:form action="users/user_save" theme="xhtml">
+			<s:textfield name="user.account" label="用户名"></s:textfield>
+			<s:textfield name="user.email" label="email"></s:textfield>
+			<s:select list="provinces"
+			listKey="id"
+			listValue="name"
+			name="user.province.id"
+			label="省份"
+			></s:select>
+			<s:submit value="提交"></s:submit>
+		</s:form>
 	</div>
 </body>
 </html>
