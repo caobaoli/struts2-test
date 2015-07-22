@@ -19,15 +19,19 @@ import com.opensymphony.xwork2.ActionSupport;
 public class TestAction extends ActionSupport {
 	
 	private String[] users;
+	private String message;
 
 	public String[] getUsers() {
 		return users;
 	}
 	
+	public String getMessage() {
+		return message;
+	}
+
+
 	public String t1() {
-		users = new String[]{"zhangsan", "lisi", "zhaoba", "wangwu"};
-		
-		ActionContext.getContext().getSession().put("cur_user", "张三");
+		message = super.getText("label_name", new String[]{"sssss"});
 		return SUCCESS;
 	}
 }
