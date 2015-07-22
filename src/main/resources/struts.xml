@@ -16,7 +16,7 @@
     <!-- 更改默认的主题Theme -->
     <constant name="struts.ui.theme" value="simple"></constant>
     
-    <!-- 让struts2能够识别到i18n的文件 -->
+    <!-- 让struts2能够识别到i18n的文件 (resource即配置i18n文件打头)-->
     <constant name="struts.custom.i18n.resources" value="resource"></constant>
     
     <!-- 多人开发时自己可以配置自己的struts.xml,下面的代码及引入其他人的文件 -->

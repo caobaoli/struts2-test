@@ -7,6 +7,8 @@
     
     <package name="struts-test" namespace="/tests" extends="struts-default">
         <action name="test_*" class="com.lxp.web.action.TestAction" method="{1}">
+        <!-- 如果系统出错(即程序还没到action类中（在转换器中或者拦截器中出错），则从哪来回哪去调到固定的页面) -->
+        <result name="input">/WEB-INF/views/test/t2.jsp</result>
        		<result>/WEB-INF/views/test/{1}.jsp</result>
         </action>
     </package>
