@@ -21,6 +21,7 @@ public class TestAction extends ActionSupport {
 	private String[] users;
 	private String message;
 	private Point point;
+	private String name;
 
 	public String[] getUsers() {
 		return users;
@@ -37,6 +38,10 @@ public class TestAction extends ActionSupport {
 	public Point getPoint() {
 		return point;
 	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public String t1() {
 		message = super.getText("label_name", new String[] { "sssss" });
@@ -52,4 +57,22 @@ public class TestAction extends ActionSupport {
 		System.out.println(point.getX()+"============"+point.getY());
 		return SUCCESS;
 	}
+	
+	public String t4_form() {
+
+		return SUCCESS;
+	}
+	
+	public String t4() {
+
+		return SUCCESS;
+	}
+
+	public void validateT4() {
+		if(name==null || name.length()==0) {
+			super.addFieldError(name, "姓名不能为空");
+		}
+	}
+	
+	
 }
