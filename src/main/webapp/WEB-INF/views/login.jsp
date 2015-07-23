@@ -11,12 +11,9 @@
 <title>validate</title>
 </head>
 <body>
-	<s:actionerror/>
+	用户登录信息出错：${notlogin}
 	<hr />
-	<s:form action="reg" theme="simple">
-		<s:token />
-		<div><s:textfield name="name" /><s:fielderror fieldName="name" /></div>
-		<div><s:submit value="提交"></s:submit></div>
-	</s:form>
+	${requestScope.notlogin}
+	<hr/>
 </body>
 </html>

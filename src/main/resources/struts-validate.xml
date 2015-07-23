@@ -6,12 +6,34 @@
 <struts>
     
     <package name="struts-validate" namespace="/validate" extends="struts-default">
+    	<interceptors>
+    		<!--设置自定义拦截器  -->
+    		<interceptor name="loginInterceptor" class="com.lxp.web.interceptor.LoginInterceptor">
+    			<param name="includeMethods">show, reg</param>
+    		</interceptor>
+    		<!-- 将struts默认的拦截器，及自己定义的拦截器放入拦截器栈中 -->
+    		<interceptor-stack name="default-intercept">
+    			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+    			<interceptor-ref name="defaultStack"></interceptor-ref>
+    			<interceptor-ref name="token"></interceptor-ref>
+    		</interceptor-stack>
+    	</interceptors>
+    	<!-- 定义默认的拦截器栈 -->
+    	<default-interceptor-ref name="default-intercept"></default-interceptor-ref>
+    
+    	<!-- 全局的视图，每个action都可以使用 -->
+    	<global-results>
+    		<result name="login">/WEB-INF/views/login.jsp</result>
+    	</global-results>
+    
+    
         <action name="show" class="com.lxp.web.action.ValidateTestAction" method="show">
         	<result>/WEB-INF/views/validates/vt.jsp</result>
         </action>
         
         <!-- 设置出错时跳回原页面，并显示错误信息 -->
         <action name="reg" class="com.lxp.web.action.ValidateTestAction" method="reg">
+        	<result name="invalid.token">/WEB-INF/views/validates/vt.jsp</result>
         	<result name="input">/WEB-INF/views/validates/vt.jsp</result>
         </action>
     </package>
