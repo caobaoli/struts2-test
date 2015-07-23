@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <package name="struts-validate" namespace="/validate" extends="struts-default">
+        <action name="show" class="com.lxp.web.action.ValidateTestAction" method="show">
+        	<result>/WEB-INF/views/validates/vt.jsp</result>
+        </action>
+        
+        <!-- 设置出错时跳回原页面，并显示错误信息 -->
+        <action name="reg" class="com.lxp.web.action.ValidateTestAction" method="reg">
+        	<result name="input">/WEB-INF/views/validates/vt.jsp</result>
+        </action>
+    </package>
+
+</struts>
