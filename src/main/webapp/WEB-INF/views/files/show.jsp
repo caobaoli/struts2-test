@@ -11,7 +11,8 @@
 	<h3>文件上传</h3>
 	<s:form enctype="multipart/form-data" action="file_upfile" method="post" theme="xhtml">
 		<s:textfield name="userName" label="上传者"></s:textfield>
-		<s:file name="userHead" label="头像" value="选择文件"></s:file>
+		<s:file name="userHead" label="文件1"></s:file>
+		<s:file name="userHead" label="文件2"></s:file>
 		<s:submit value="提交"></s:submit>
 	</s:form>
 </body>
