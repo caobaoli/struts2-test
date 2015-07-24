@@ -6,12 +6,22 @@
 <struts>
     
     <package name="struts-fileUpload" namespace="/files" extends="struts-default">
-        <action name="file_*" class="com.lxp.web.action.FileUploadAction" method="{1}">
-        	<result>/WEB-INF/views/files/{1}.jsp</result>
+        <action name="file_show" class="com.lxp.web.action.FileUploadAction" method="show">
+        	<result>/WEB-INF/views/files/show.jsp</result>
         </action>
         
         <action name="file_upfile" class="com.lxp.web.action.FileUploadAction" method="upfile">
+        	<interceptor-ref name="fileUpload">
+        		<!-- 设置上传文件的类型 -->
+        		<param name="allowedExtensions">jpg, png, bmp</param>
+        		<param name="maximumSize">2048</param>
+        	</interceptor-ref>
+        	<!-- 当设置自定义拦截器时，默认的拦截器就会失效，下面是夹入默认的拦截器 -->
+        	<interceptor-ref name="defaultStack"></interceptor-ref>
         	<param name="uploadFileDir">/uploadFileDir</param>
+        	
+        	<!-- 设置input视图在action之前错误时，从哪来让回哪去 -->
+        	<result name="input">/WEB-INF/views/files/show.jsp</result>
         </action>
     </package>
 
