@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>hello, 这是首页</h1>
-	
+	<h3>您已登录成功</h3>
 </body>
 </html>

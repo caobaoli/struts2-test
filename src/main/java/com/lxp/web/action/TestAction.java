@@ -1,10 +1,6 @@
-/**
- * 
- */
 package com.lxp.web.action;
 
 import com.lxp.vo.Point;
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
