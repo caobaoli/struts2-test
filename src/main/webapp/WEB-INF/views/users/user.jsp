@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	hello struts2
+	${msg}
 </body>
 </html>
