@@ -6,10 +6,6 @@
 <struts>
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
     <constant name="struts.devMode" value="false" />
-
-	<package name="ss2" extends="struts-default" namespace="">
-		<action name="hello" class="helloAction" method="hello">
-			<result>/WEB-INF/views/hello.jsp</result>
-		</action>
-	</package>
+	<constant name="struts.convention.result.path" value="/WEB-INF/views/"/>
+	<constant name="struts.action.extension" value="action,,do,go"></constant>
 </struts>

@@ -1,5 +1,7 @@
 package com.lxp.service.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.lxp.service.HelloService;
 
 /**
@@ -11,6 +13,7 @@ import com.lxp.service.HelloService;
  * @Version V1.0
  * Copyright  Corporation 2015
  */
+@Service
 public class HelloServiceImpl implements HelloService {
 
 	@Override

@@ -6,11 +6,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
-	
-	<bean id="helloService" class="com.lxp.service.impl.HelloServiceImpl"></bean>
-	
-	<bean id="helloAction" class="com.lxp.web.action.HelloAction">
-		<property name="helloService" ref="helloService"></property>
-	</bean>
+	<!-- 打开annotation配置 -->
+	<context:annotation-config/>
+	<context:component-scan base-package="
+		com.lxp.service,
+		com.lxp.web.action
+	"></context:component-scan>
 	
 </beans>

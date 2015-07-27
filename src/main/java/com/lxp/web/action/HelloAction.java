@@ -1,5 +1,10 @@
 package com.lxp.web.action;
 
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.ParentPackage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 import com.lxp.service.HelloService;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -12,15 +17,12 @@ import com.opensymphony.xwork2.ActionSupport;
  * @Version V1.0
  * Copyright  Corporation 2015
  */
+@Controller
+@ParentPackage(value="struts-default")
 public class HelloAction extends ActionSupport {
+	@Autowired
 	private HelloService helloService;
 	
-	public void setHelloService(HelloService helloService) {
-		this.helloService = helloService;
-	}
-
-
-
 	private String message;
 	
 	public String getMessage() {
@@ -28,9 +30,10 @@ public class HelloAction extends ActionSupport {
 	}
 
 
-
+	@Action(value="hello")
 	public String hello() {
 		message = helloService.sayHello();
+		System.out.println("************************");
 		return SUCCESS;
 	}
 }

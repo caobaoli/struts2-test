@@ -8,5 +8,6 @@
 </head>
 <body>
 	${message}
+	<h2>零配置成功</h2>
 </body>
 </html>
